@@ -1,20 +1,20 @@
 {
-  "name": "expressapp",
+  "name": "weblab5",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  }
+  "start": "node app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joannakwh/WebLab5.git"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
-    "express-handlebars": "^3.1.0",
-    "handlebars": "^4.4.3"
+  "bugs": {
+    "url": "https://github.com/joannakwh/WebLab5/issues"
   },
-  "devDependencies": {
-    "nodemon": "^1.19.3"
-  }
+  "homepage": "https://github.com/joannakwh/WebLab5#readme"
 }
