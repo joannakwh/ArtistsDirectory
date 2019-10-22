@@ -7,6 +7,10 @@ const server = http.createServer((req, res) => {
   res.end('<h1>Hello World</h1>');
 });
 
+setInterval(function() {
+  http.get("https://web-lab5.herokuapp.com/");
+}, 300000); // every 5 minutes (300000)
+
 server.listen(port,() => {
   console.log(`Server running at port `+port);
 });
