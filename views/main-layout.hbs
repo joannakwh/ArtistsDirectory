@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Artist Directory</title>
+    <script src="/public/js/dropdown.js"></script>
+    <link rel="stylesheet" href="/public/css/style.css">
+  </head>
+  <body>
+
+    <div id="topbox">
+      <h1>Artist Directory</h1>
+      <form action="/search" method = "POST">
+      <button id="btnsearch" type="submit">Search</button>
+      <input id = "search" name="search" type="text" placeholder="Search for Artists">
+      </form>
+      <button onclick="dropdownHandler()" id = "btnaddartist" type="submit">Add Artist</button>
+      
+    </div>
+
+    {{!-- <div id="dropdown">
+      <input id = "name" type="text" placeholder="Artist Name"></br>
+      <input id = "about" type="text" placeholder="About Artist"></br>
+      <input id = "imgurl" type="text" placeholder="Image URL"></br>
+      <button onclick="add()" id="add" type="submit">Add</button>
+      </form>
+    </div> --}}
+    
+    <div id="dropdown">
+        <form class="dropdown-form" action="/add" method = "POST">
+            <input id="name" name="name" type="text" placeholder="Artist Name" ></br>
+            <input id="about" name="about" type="text" placeholder="About Artist" ></br>
+            <input id="url" name="url" type="text" placeholder="Image URL" ></br>
+            <button id="add" type="submit">Add</button>
+        </form>
+    </div>
+
+    <div id="wrapper">
+      {{{body}}}
+    </div>
+
+  </body>
+</html>

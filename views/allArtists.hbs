@@ -1,0 +1,11 @@
+{{#each artists}}
+    <div class = 'profile'>
+        <form class="dropdown-form" action="/delete/{{this.name}}" method = "POST">
+        <button class='deleteBtn' type='submit'>Delete</button>
+        </form>
+        <img src='{{this.url}}', class='profileImg'/>
+        <h2>{{this.name}}</h2>
+        <h3>{{this.about}}</h3>
+
+    </div>
+{{/each}}
