@@ -35,7 +35,7 @@ app.use(artistRoutes);
 
 //tells the node app what to do when you send a set request of '/' (home page)
 app.get('/', (req,res) => {
-  res.render('allArtists');
+  res.render('all-artists');
 });
 
 const port = process.env.PORT || 3000

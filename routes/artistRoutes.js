@@ -8,7 +8,7 @@ router.get('/all', (req,res) => {
     {
         allArtists[i]['id'] = 'artist/' + i;
     }
-    res.render('allArtists', {artists: allArtists});
+    res.render('all-artists', {artists: allArtists});
 });
 router.post('/add', (req,res) => {
     let obj_name = req.body.name;
@@ -43,7 +43,7 @@ router.post('/search', (req,res) => {
             matchingArtists.push(allArtists[i]);
         }
     }
-    res.render('allArtists', {artists: matchingArtists});
+    res.render('all-artists', {artists: matchingArtists});
 });
 
 module.exports = router;
