@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+      "start": "node app.js"
   },
-  "start": "node app.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/joannakwh/WebLab5.git"
