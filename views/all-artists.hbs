@@ -1,8 +1,14 @@
+{{!-- writes html for each artist --}}
+{{!-- artists var is passed in from artistRoutes.js --}}
 {{#each artists}}
     <div class = 'profile'>
+        {{!-- I put the delete button in a form so that I can connect a post request
+        The post request is /delete (from artistRoutes)--}}
         <form class="dropdown-form" action="/delete/{{this.name}}" method = "POST">
         <button class='deleteBtn' type='submit'>Delete</button>
         </form>
+
+        {{!-- url, name and about are inserted from the passed in artist object --}}
         <img src='{{this.url}}', class='profileImg'/>
         <h2>{{this.name}}</h2>
         <h3>{{this.about}}</h3>
