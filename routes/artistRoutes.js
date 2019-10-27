@@ -1,6 +1,5 @@
 // another module with an express app (like the one in index)
 //I am exporting it to a const called router to be used in index.js
-
 const express = require('express');
 const router = express.Router();
 //import module from artistData.js
@@ -8,12 +7,14 @@ let artistDataModule = require('../artistData');
 
 router.get('/all', (req,res) => {
     let allArtists = artistDataModule.getAllArtists();
+    console.log(allArtists);
     for(let i = 0; i < allArtists.length; i++)
     {
         allArtists[i]['id'] = 'artist/' + i;
     }
     res.render('all-artists', {artists: allArtists});
 });
+
 router.post('/add', (req,res) => {
     //use body parser to read body contents and extract form fields
     //where body parser grabs the fields, corresponds to the name="" attribute
@@ -31,6 +32,7 @@ router.post('/add', (req,res) => {
     artistDataModule.addArtist(obj);
     res.redirect(301, '/all');
 });
+
 router.post('/delete/:id', (req,res) => {
     let id = req.params.id;
     artistDataModule.deleteArtist(id);

@@ -5,16 +5,10 @@ let bodyParser = require('body-parser');
 //import module from artistRoutes.js
 let artistRoutes = require('./routes/artistRoutes');
 
-
 //this lets you use req.body.____ to grab stuff from the entire body portion of an incoming request stream 
 // express.js middleware 
 app.use(bodyParser.urlencoded({ extended: false })) 
 app.use(bodyParser.json())
-
-//make heroku not sleep (it kind of works sometimes?)
-setInterval(function() {
-  http.get("https://web-lab5.herokuapp.com/");
-}, 300000); 
 
 //handlebars
 const expressHbs = require('express-handlebars');

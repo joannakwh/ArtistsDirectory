@@ -1,7 +1,30 @@
+//makes it so that node will not use uninitialized variables
+//quickly solves the async problem
+'use strict';
+
 let artists = [];
 
+//request to read from json object
+//artist.json is in the root directory
+const fs = require('fs');
+fs.readFile('artists.json', (err, data) => {
+    if (err) throw err; 
+    artists = JSON.parse(data);
+    console.log("readfile", artists);
+});
+
+//request to write json to file
+function writeToFile() {
+    fs.writeFile('artists.json', JSON.stringify(artists), (err) => {
+        if (err) throw err;
+        console.log('artists written to json');
+    });
+}
+
+//artist array getters and setters 
 function addArtist(a) {
     artists.push(a);
+    writeToFile();
 }
 
 function getAllArtists() {
@@ -21,6 +44,7 @@ function deleteArtist(id) {
             artists.splice(i, 1);
         }
     }
+    writeToFile();
 }
 
 //module.exports is a feature in node that lets you export a 'module' object to be imported and used somewhere else (i.e. in another js file)
@@ -35,6 +59,7 @@ module.exports = {
     //function name in artistData.js : how you want to call the function externally (I made them the same)
     addArtist : addArtist, 
     getAllArtists : getAllArtists,
-    getArtist: getArtist,
-    deleteArtist: deleteArtist 
+    getArtist : getArtist,
+    deleteArtist : deleteArtist,
+    writeToFile : writeToFile
 }
